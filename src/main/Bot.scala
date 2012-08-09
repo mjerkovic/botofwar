@@ -64,7 +64,7 @@ class MasterBot extends Bot {
 
 class MiniBot extends Bot {
     override def react(paramMap: Map[String, String], view: View) : String = {
-      view.offsetToNearest(paramMap("target").toIterable.head) match {
+      view.offsetToNearest(paramMap("target")(0)) match {
             case Some(offset) =>
                 "Move(direction=" + XY(paramMap("targetHeading")) + ")"
             case None => 
